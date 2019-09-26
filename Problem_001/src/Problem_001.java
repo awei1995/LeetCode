@@ -7,7 +7,7 @@ public class Problem_001 {
     public static void main(String[] args) {
         int[] input = {2,7,11,15};
         int target = 9;
-        Solution Sol = new Solution();
+        Solution_001 Sol = new Solution_001();
         System.out.println(Arrays.toString(Sol.twoSum(input, target)));
     }
 }
@@ -15,7 +15,7 @@ public class Problem_001 {
 /**
  * HashMap
  */
-class Solution {
+class Solution_001 {
     int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> hashmap = new HashMap<>();
         for (int i = 0; i < nums.length; i++){
@@ -27,26 +27,8 @@ class Solution {
                 return new int[] {i, hashmap.get(complement)};
             }
         }
-        throw new IllegalArgumentException("No Solution");
+        throw new IllegalArgumentException("No Solution!");
     }
 }
 
-
-
-/**
- *  Brute Force
- */
-/*class Solution {
-    int[] twoSum(int[] nums, int target) {
-        for (int i = 0; i < nums.length; i++){
-            int complement = target - nums[i];
-            for (int j = i + 1; j < nums.length; j++) {
-                if ( nums[j] == complement) {
-                    return new int[] { i, j};
-                }
-            }
-        }
-        throw new IllegalArgumentException("No Solution");
-    }
-}*/
 
